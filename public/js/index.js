@@ -40,12 +40,10 @@
                     `
                     <tr>
                       <td>${this.name}</td>
-                      <td><a class="waves-effect waves-light btn"><i class="material-icons left">cloud</i>Button</a></td>
+                      <td><a class="waves-effect waves-light btn"><i class="material-icons left">perm_identity</i>Profile</a></td>
                     <tr>
-
                     `
                   );
-
                 });
                 $('#ClassList table').append(tableContent);
         });
