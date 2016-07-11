@@ -27,10 +27,10 @@
           console.log("about to loop through array");
             let arrayLength = response.length;
             for (var i = 0; i < arrayLength; i++) {
-              let herokuAppName = response[i].name;
-              herokuAppName.split();
-              herokuAppName.sort();
-              console.log(herokuAppName);
+              console.log(response[i].name);
+              let herokuAppNames = new Array(response[i].name);
+              herokuAppNames.sort();
+              console.log(herokuAppNames);
 
             }
         });
