@@ -13,6 +13,14 @@
 
   });
 
+  $.ajax({
+  type: 'GET',
+  url: '/totalHerokuAddOns',
+}).done(function(response){
+  console.log(response);
+
+});
+
 
   }); // end of document ready
 })(jQuery); // end of jQuery name space
