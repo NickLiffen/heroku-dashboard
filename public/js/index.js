@@ -26,7 +26,7 @@
             url: '/totalHerokuApps',
         }).done(function(response) {
             console.log("about to loop through array");
-            let tableContent;
+            var tableContent;
             tableContent = $('<tbody></tbody>');
             $.each(response, function() {
                 tableContent.append(
