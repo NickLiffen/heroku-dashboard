@@ -9,7 +9,7 @@
     type: 'GET',
     url: '/totalHerokuApps',
   }).done(function(response){
-    console.log(response);
+    console.log(response.length);
 
   });
 
@@ -17,7 +17,7 @@
   type: 'GET',
   url: '/totalHerokuAddOns',
 }).done(function(response){
-  console.log(response);
+  console.log(response.length);
 
 });
 
