@@ -28,6 +28,7 @@
             let arrayLength = response.length;
             for (var i = 0; i < arrayLength; i++) {
               let herokuAppName = response[i].name;
+              herokuAppName.split();
               herokuAppName.sort();
               console.log(herokuAppName);
 
