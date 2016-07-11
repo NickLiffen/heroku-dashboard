@@ -23,6 +23,7 @@
     "bower": "*",
     "browserify-shim": "^3.8.12",
     "chai": "*",
+    "chart.js": "^2.1.6",
     "compression": "^1.6.2",
     "connect-flash": "*",
     "cookie-parser": "^1.4.3",
