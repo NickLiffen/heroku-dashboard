@@ -3,12 +3,22 @@
   font-style: normal;
 }
 
-body {
-  display: flex;
-  min-height: 100vh;
-  flex-direction: column;
+html {
+    position: relative;
+    min-height: 100%;
 }
 
-main {
-  flex: 1 0 auto;
+body {
+    margin: 0 0 100px; /* bottom = footer height */
+    padding: 25px;
+}
+
+footer {
+    background-color: orange;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 100px;
+    width: 100%;
+    overflow:hidden;
 }
