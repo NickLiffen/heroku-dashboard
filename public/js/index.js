@@ -9,16 +9,14 @@
     type: 'GET',
     url: '/totalHerokuApps',
   }).done(function(response){
-    console.log(response.length);
-
+    $('#totalHerokuApps').html(response.length);
   });
 
   $.ajax({
   type: 'GET',
   url: '/totalHerokuAddOns',
 }).done(function(response){
-  console.log(response.length);
-
+  $('#totalHerokuAddOns').html(response.length);
 });
 
 
