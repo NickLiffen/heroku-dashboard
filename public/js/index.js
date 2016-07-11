@@ -8,7 +8,6 @@
     $.ajax({
     type: 'GET',
     url: '/totalHerokuApps',
-    dataType: 'JSON'
   }).done(function(response){
     console.log(response);
 
