@@ -9,7 +9,7 @@
             type: 'GET',
             url: '/totalHerokuApps',
         }).done(function(response) {
-          console.log("were here");
+            console.log("were here");
             $('#totalHerokuApps').html(response.length);
         });
 
@@ -25,20 +25,33 @@
             type: 'GET',
             url: '/totalHerokuApps',
         }).done(function(response) {
-          console.log("about to loop through array");
+            console.log("about to loop through array");
             let tableContent;
-    						tableContent= $('<tbody></tbody>');
-    						$.each(response, function(){
-                  tableContent.append(
+            tableContent = $('<tbody></tbody>');
+            $.each(response, function() {
+                tableContent.append(
                     `<tr>
                       <td>${this.name}</td>
                       <td><a class="waves-effect waves-light btn"><i class="material-icons left">perm_identity</i>Profile</a></td>
                     <tr>`
-                  );
-                });
-                $('#ClassList table').append(tableContent);
+                );
+            });
+            $('#ClassList table').append(tableContent);
         });
 
+
+        var $rows = $('#herokuAppTable tr');
+        $('#search').keyup(function() {
+
+            var val = '^(?=.*\\b' + $.trim($(this).val()).split(/\s+/).join('\\b)(?=.*\\b') + ').*$',
+                reg = RegExp(val, 'i'),
+                text;
+
+            $rows.show().filter(function() {
+                text = $(this).text().replace(/\s+/g, ' ');
+                return !reg.test(text);
+            }).hide();
+        });
 
     }); // end of document ready
 })(jQuery); // end of jQuery name space
