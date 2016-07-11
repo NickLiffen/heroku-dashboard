@@ -26,23 +26,14 @@
             url: '/totalHerokuApps',
         }).done(function(response) {
           console.log("about to loop through array");
-          /*  let herokuAppNames = [];
-            let arrayLength = response.length;
-            for (var i = 0; i < arrayLength; i++) {
-              herokuAppNames.push(response[i].name);
-            }
-            herokuAppNames.sort();*/
-
             let tableContent;
     						tableContent= $('<tbody></tbody>');
     						$.each(response, function(){
                   tableContent.append(
-                    `
-                    <tr>
+                    `<tr>
                       <td>${this.name}</td>
                       <td><a class="waves-effect waves-light btn"><i class="material-icons left">perm_identity</i>Profile</a></td>
-                    <tr>
-                    `
+                    <tr>`
                   );
                 });
                 $('#ClassList table').append(tableContent);
