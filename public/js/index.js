@@ -50,6 +50,7 @@
                     text = $(this).text().replace(/\s+/g, ' ');
                     return !reg.test(text);
                 }).hide();
+
             });
         });
 
