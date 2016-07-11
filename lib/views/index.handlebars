@@ -10,142 +10,18 @@
 </head>
 
 <body>
-  <div class="nav-container">
-		    <a id="top"></a>
-		    <nav class="bg-dark">
-		        <div class="nav-bar">
-		            <div class="module left">
-		                <a href="/">
-		                    <img class="logo logo-light" alt="Lilly Logo" src="images/lillylogo.png" />
-		                    <img class="logo logo-dark" alt="Lilly Logo" src="images/lillylogo.png" />
-		                </a>
-		            </div>
-		            <div class="module widget-handle mobile-toggle right visible-sm visible-xs">
-		                <i class="ti-menu"></i>
-		            </div>
-		            <div class="module-group right">
-		                <div class="module left">
-		                    <ul class="menu">
-		                        <li class="has-dropdown">
-		                            <a href="#">Platforms</a>
-		                            <ul>
-		                                <li>
-		                                    <a href="/force">Force.com</a>
-		                                </li>
-		                                <li>
-		                                    <a href="/heroku">Heroku</a>
-		                                </li>
-		                                <li>
-		                                    <a href="/comingsoon">OpenShift</a>
-		                                </li>
-		                                <li>
-		                                    <a href="/comingsoon">GCRS</a>
-		                                </li>
-		                            </ul>
-		                        </li>
-		                		<li class="has-dropdown">
-		                            <a href="#">App Dev</a>
-		                            <ul>
-		                                <li>
-		                                    <a href="/principles">Principles</a>
-		                                </li>
-		                                <li>
-		                                    <a href="/positioning">Positioning</a>
-		                                </li>
-		                                <li>
-		                                    <a href="/patterns">Design Patterns</a>
-		                                </li>
-		                                <li>
-		                                    <a href="/languages">Languages</a>
-		                                </li>
-		                                <li>
-		                                    <a href="/comingsoon">Integration Fabric</a>
-		                                </li>
-		                            </ul>
-		                        </li>
-		                		<li class="has-dropdown">
-		                            <a href="#">Process</a>
-		                            <ul>
-		                                <li>
-		                                    <a href="/agile">Agile</a>
-		                                </li>
-		                                <li>
-		                                    <a href="/ci">CI</a>
-		                                </li>
-		                                <li>
-		                                    <a href="/tools">DevOps Tools</a>
-		                                </li>
-		                            </ul>
-		                        </li>
-		                        <li class="has-dropdown">
-		                            <a href="#">Resources</a>
-		                            <ul>
-		                                <li>
-		                                    <a href="/devguidelines">Dev Guidelines</a>
-		                                </li>
-		                                <li>
-		                                    <a href="/assets">Reusable Assets</a>
-		                                </li>
-		                                <li>
-		                                    <a href="/comingsoon">API Catalogue</a>
-		                                </li>
-		                            </ul>
-		                        </li>
-		                        <li class="has-dropdown">
-		                            <a href="#">Community</a>
-		                            <ul>
-		                                <li>
-		                                    <a href="http://www.lilly.com" target="_blank">Lilly.com</a>
-		                                </li>
-		                                <li>
-		                                    <a href="https://gso--c.eu2.visual.force.com/apex/GLBL_SBLD_Home_NC?id=a7Db0000000Kyks" target="_blank">EA</a>
-		                                </li>
-		                                <li>
-		                                    <a href="http://launchpad.lilly.com" target="_blank">Cirrus Launchpad</a>
-		                                </li>
-		                                <li>
-		                                    <a href="https://gso.my.salesforce.com/_ui/core/chatter/ui/ChatterPage" target="_blank">Chatter</a>
-		                                </li>
-		                            </ul>
-		                        </li>
-		                        <li>
-		                            <a href="/getstarted">Get Started</a>
-		                        </li>
-		                    </ul>
-		                </div>
-		            </div>
-		        </div>
-		    </nav>
-		</div>
 
-<article>
-
-</article>
-
-<footer class="footer-2 bg-dark text-center-xs">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-4">
-            <a href="#"><img class="image-xxs fade-half" alt="Lilly Logo" src="img/general/lillylogo.png"></a>
-          </div>
-
-          <div class="col-sm-4 text-center">
-            <span class="fade-half">
-              © Copyright 2016 Eli Lilly &amp; Company
-            </span>
-          </div>
-
-          <div class="col-sm-4 text-right text-center-xs">
-            <ul class="list-inline social-list">
-              <li><a href="https://github.com/EliLillyCo" target="_blank"><i class="ti-github"></i></a></li>
-              <li><a href="https://twitter.com/lillypad" target="_blank"><i class="ti-twitter-alt"></i></a></li>
-              <li><a href="https://www.facebook.com/elilillyandco" target="_blank"><i class="ti-facebook"></i></a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </footer>
-
+  <nav>
+    <ul class="right hide-on-med-and-down">
+      <li><a href="#!">First Sidebar Link</a></li>
+      <li><a href="#!">Second Sidebar Link</a></li>
+    </ul>
+    <ul id="slide-out" class="side-nav">
+      <li><a href="#!">First Sidebar Link</a></li>
+      <li><a href="#!">Second Sidebar Link</a></li>
+    </ul>
+    <a href="#" data-activates="slide-out" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+  </nav>
 
 </body>
 <script src="node/jquery/dist/jquery.min.js"></script>

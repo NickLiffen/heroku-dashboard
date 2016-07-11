@@ -3,7 +3,7 @@
 (function($){
   $(function(){
 
-    $(".dropdown-button").dropdown();
+    //$(".dropdown-button").dropdown();
     $('.button-collapse').sideNav();
     //$('.collapsible').collapsible();
 
