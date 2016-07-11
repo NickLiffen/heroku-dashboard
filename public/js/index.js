@@ -40,7 +40,7 @@
         });
 
 
-        var $rows = $('#herokuAppTable tr');
+        var $rows = $('#herokuAppTable tbody tr');
         console.log($rows);
         $('#search').keyup(function() {
 
