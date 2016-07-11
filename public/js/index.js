@@ -40,7 +40,8 @@
         });
 
 
-        var $rows = $('#herokuAppTable tbody tr');
+        var $rows = $('#herokuAppTable tbody tr td');
+        console.log($rows);
         $('#search').keyup(function() {
 
             var val = '^(?=.*\\b' + $.trim($(this).val()).split(/\s+/).join('\\b)(?=.*\\b') + ').*$',
