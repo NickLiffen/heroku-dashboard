@@ -117,7 +117,8 @@
                 <h3 class='center'>Heroku Applications</h3>
             </div>
             <div class="col s3">
-                <input type="text" id='search' class="form-control" placeholder="Search for...">
+              <i class="material-icons">search</i>
+                <input type="text" id='search' class="form-control" placeholder="Search for Application...">
                 <span class="input-group-btn">
         </span>
             </div>
@@ -136,9 +137,19 @@
 
     <div class='container'>
         <div class='row'>
-            <h3 class='center'>Heroku Adds On's</h3>
+            <div class="col s9">
+                <h3 class='center'>Heroku Add Ons</h3>
+            </div>
+            <div class="col s3">
+              <i class="material-icons">search</i>
+                <input type="text" id='search' class="form-control" placeholder="Search for Add Ons...">
+                <span class="input-group-btn">
+        </span>
+            </div>
+        </div>
+        <div class='row'>
             <div id="ClassList">
-                <table class="striped centered responsive-table">
+                <table class="striped centered responsive-table" id='herokuAddOnTable'>
                     <thead>
                         <th>Add On Name</th>
                         <th>Add On Profile</th>
