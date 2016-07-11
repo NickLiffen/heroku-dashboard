@@ -6,7 +6,8 @@
     <title>Example App</title>
     <link rel="stylesheet" type="text/css" href="css/materialize.css">
     <link rel="stylesheet" type="text/css" href="css/dashbaord.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 </head>
 
 <body>
@@ -114,14 +115,14 @@
     <div class='container'>
     <div class='row'>
       <h3 class='center'>Heroku Applications</h3>
-      <nav>
-    <div class="nav-wrapper">
-      <div class="search-wrapper card">
-            <input id="search"><i class="material-icons">search</i>
-            <div class="search-results"></div>
-          </div>
-    </div>
-  </nav>
+      <div class="col-lg-6">
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="Search for...">
+        <span class="input-group-btn">
+          <button class="btn btn-default" type="button">Search!</button>
+        </span>
+      </div><!-- /input-group -->
+    </div><!-- /.col-lg-6 -->
       <div id="ClassList">
         <table class="striped centered responsive-table">
           <thead>
@@ -151,7 +152,7 @@
 <script src="node/jquery/dist/jquery.min.js"></script>
 <script src="js/materialize.min.js"></script>
 <script src="js/bundle.js"></script>
-<script src="js/index.js">
-</script>
+<script src="js/index.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 
 </html>
