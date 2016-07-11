@@ -26,13 +26,16 @@
         }).done(function(response) {
           console.log("about to loop through array");
             let arrayLength = response.length;
-            for (var i = 0; i < arrayLength; i++) {
-              console.log(response[i].name);
-              let herokuAppNames = new Array(response[i].name);
-              herokuAppNames.sort();
-              console.log(herokuAppNames);
 
+            let herokuAppNames = [];
+
+            for (var i = 0; i < arrayLength; i++) {
+              herokuAppNames.push(response[i].name);
             }
+
+            herokuAppNames.sort();
+            console.log(herokuAppNames);
+
         });
 
 
