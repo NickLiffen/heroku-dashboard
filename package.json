@@ -38,6 +38,7 @@
     "handlebars": "^4.0.5",
     "heroku-client": "^3.0.0-beta2",
     "jquery": "^3.1.0",
+    "jsforce": "^1.7.0",
     "mandrill-api": "*",
     "materialize-css": "^0.97.6",
     "method-override": "^2.3.6",
