@@ -36,11 +36,44 @@
                     <tr>`
                 );
             });
-            $('#ClassList table').append(tableContent);
+            $('#HerokuApps table').append(tableContent);
 
             var $rows = $('#herokuAppTable tbody tr');
             console.log($rows);
-            $('#search').keyup(function() {
+            $('#searchApps').keyup(function() {
+
+                var val = '^(?=.*\\b' + $.trim($(this).val()).split(/\s+/).join('\\b)(?=.*\\b') + ').*$',
+                    reg = RegExp(val, 'i'),
+                    text;
+
+                $rows.show().filter(function() {
+                    text = $(this).text().replace(/\s+/g, ' ');
+                    return !reg.test(text);
+                }).hide();
+
+            });
+        });
+
+        $.ajax({
+            type: 'GET',
+            url: '/totalHerokuAddOns',
+        }).done(function(response) {
+            console.log("about to loop through array");
+            var tableContent;
+            tableContent = $('<tbody></tbody>');
+            $.each(response, function() {
+                tableContent.append(
+                    `<tr>
+                      <td>${this.name}</td>
+                      <td><a class="waves-effect waves-light btn"><i class="material-icons left">perm_identity</i>Profile</a></td>
+                    <tr>`
+                );
+            });
+            $('#HerokuAddOns table').append(tableContent);
+
+            var $rows = $('#herokuAddOnsTable tbody tr');
+            console.log($rows);
+            $('#searchAddOns').keyup(function() {
 
                 var val = '^(?=.*\\b' + $.trim($(this).val()).split(/\s+/).join('\\b)(?=.*\\b') + ').*$',
                     reg = RegExp(val, 'i'),
