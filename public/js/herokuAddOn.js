@@ -109,14 +109,14 @@
 
             //Data for the Chart JS
             var result = order(applicationName);
-            const herokuAppName = result[0];
-            const NoOfAddOns    = result[1];
+            var herokuAppName = result[0];
+            var NoOfAddOns    = result[1];
             var chartOne = document.getElementById("addOnsPerApplication");
             barChartCreator(chartOne, herokuAppName, NoOfAddOns, '# Heorku AddOns', 'Number of AddOns Per Applications');
 
             var resultNew = order(addOnName);
-            const herokuAddOnName = resultNew[0];
-            const totalNoOfAddOns    = resultNew[1];
+            var herokuAddOnName = resultNew[0];
+            var totalNoOfAddOns    = resultNew[1];
             var chartTwo = document.getElementById("totalOfEachAddOn");
             barChartCreator(chartTwo, herokuAddOnName, totalNoOfAddOns, '# Amount of Addons ', 'Total amount of each Add On in Heroku');
 

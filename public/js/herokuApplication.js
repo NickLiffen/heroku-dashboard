@@ -54,8 +54,8 @@
 
 
             var resultNew = order(herokuCreatedDateArray);
-            const herokuCreatedDates  = resultNew[0];
-            const totalAppsInMonth    = resultNew[1];
+            var herokuCreatedDates  = resultNew[0];
+            var totalAppsInMonth    = resultNew[1];
             var lineChart = document.getElementById("lineChart");
 
             var data = {
@@ -86,7 +86,7 @@
                 };
 
                 //Creating the Line chart using the data above.
-                const myLineChart = new Chart(lineChart, {
+                var myLineChart = new Chart(lineChart, {
                   type: 'line',
                   data: data
                 });
