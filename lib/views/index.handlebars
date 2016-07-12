@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Example App</title>
+    <title>Heroku Dashbard</title>
     <link rel="stylesheet" type="text/css" href="css/materialize.css">
     <link rel="stylesheet" type="text/css" href="css/dashbaord.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -88,44 +88,33 @@
 
         </div>
     </div>
+
+
     <div class="container">
-
-        <h1>Force</h1>
-
         <div class="row">
             <div class="col s6">
-                <div class="card blue-grey darken-1">
-                    <div class="card-content white-text">
-                        <span class="card-title">Total Number of Force Appliocations</span>
-                        <p>
-                            100
-                        </p>
-                    </div>
-                    <div class="card-action">
-                        <a href="#">Show all Apps</a>
-                    </div>
-                </div>
+                <canvas id="addOnsPerApplication" width="100" height="100"></canvas>
             </div>
 
 
             <div class="col s6">
-                <div class="card blue-grey darken-1">
-                    <div class="card-content white-text">
-                        <span class="card-title">Total Number of Force Add Ons</span>
-                        <p>
-                            100
-                        </p>
-                    </div>
-                    <div class="card-action">
-                        <a href="#">Show all Add Ons</a>
-                    </div>
-                </div>
+                <canvas id="totalOfEachAddOn" width="100" height="100"></canvas>
+            </div>
+        </div>
+
+
+
+        <div class="row">
+            <div class="col s8">
+                <canvas id="lineChart" width="100" height="100"></canvas>
+              </div>
             </div>
         </div>
     </div>
 
 
 </body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.6/Chart.min.js"></script>
 <script src="node/jquery/dist/jquery.min.js"></script>
 <script src="js/materialize.min.js"></script>
 <script src="js/index.js"></script>
