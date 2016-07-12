@@ -21,14 +21,5 @@
             $('#totalHerokuAddOns').html(response.length);
         });
 
-
-        $.ajax({
-            type: 'GET',
-            url: '/force',
-        }).done(function(response) {
-          console.log(response);
-        });
-
-
     }); // end of document ready
 })(jQuery); // end of jQuery name space
