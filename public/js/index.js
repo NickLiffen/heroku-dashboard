@@ -4,6 +4,7 @@
     $(function() {
 
         $(".button-collapse").sideNav();
+        console.log("avout to amke request");
 
         $.ajax({
             type: 'GET',
