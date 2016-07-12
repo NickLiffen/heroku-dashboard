@@ -4,13 +4,13 @@
     $(function() {
 
         $(".button-collapse").sideNav();
-        console.log("avout to amke request");
+
 
         $.ajax({
             type: 'GET',
             url: '/totalHerokuApps',
         }).done(function(response) {
-            console.log("were here");
+
             $('#totalHerokuApps').html(response.length);
         });
 

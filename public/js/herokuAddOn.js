@@ -25,7 +25,7 @@
 
             return [a, b];
         }
-
+        //This function acts as a callback function for creating a bar chart chart. Saves having to write all the code again multiple times.
         function barChartCreator(DOMLocation, labels, data, label, title){
           var createdChart = new Chart(DOMLocation, {
               type: 'bar',
@@ -75,7 +75,7 @@
             type: 'GET',
             url: '/totalHerokuAddOns',
         }).done(function(response) {
-            console.log(response);
+
 
             var applicationName = [];
             var addOnName = [];
@@ -122,7 +122,7 @@
 
 
             var $rows = $('#herokuAddOnsTable tbody tr');
-            console.log($rows);
+
             $('#searchAddOns').keyup(function() {
 
                 var val = '^(?=.*\\b' + $.trim($(this).val()).split(/\s+/).join('\\b)(?=.*\\b') + ').*$',
