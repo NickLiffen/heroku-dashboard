@@ -10,16 +10,35 @@
             type: 'GET',
             url: '/totalHerokuApps',
         }).done(function(response) {
+          console.log(response);
+            //Empty Array - this is going to be have all the app names in so I can go and get the data critically from force.
+            var appNames = [];
 
-            var tableContent;
+              $.each(response, function() {
+                appNames.push(this.name);
+              });
+
+              console.log(appNames);
+
+              $.ajax({
+                  type: 'POST',
+                  contentType: "application/json; charset=utf-8",
+                  data: JSON.stringify(appNames),
+                  url: '/forceQuery',
+              }).done(function(response) {
+                console.log(response);
+              });
 
 
-            tableContent = $('<tbody></tbody>');
+              var tableContent;
+
+              tableContent = $('<tbody></tbody>');
 
             $.each(response, function() {
                 tableContent.append(
                     `<tr>
                       <td>${this.name}</td>
+                        <td>${this.name}</td>
                       <td><a class="waves-effect waves-light btn" id="${this.name}"><i class="material-icons left">perm_identity</i>Profile</a></td>
                     <tr>`
                 );
