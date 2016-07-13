@@ -72,6 +72,13 @@
 
         $.ajax({
             type: 'GET',
+            url: '/forceQuery',
+        }).done(function(response) {
+          console.log(response);
+        });
+
+        $.ajax({
+            type: 'GET',
             url: '/totalHerokuApps',
         }).done(function(response) {
             $('#totalHerokuApps').html(response.length);
