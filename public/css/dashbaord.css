@@ -22,3 +22,13 @@ h1 {
     margin: 0 10px 0 8px;
     -webkit-font-smoothing: antialiased;
 }
+
+#hide{
+  display: none;
+}
+
+.center {
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+}

@@ -2,7 +2,6 @@
 
 (function($) {
     $(function() {
-
         $(".button-collapse").sideNav();
 
         //This function inputs one array - then outputs two different arrays. Array 1: The number of times an element appears in the array. Array 2. Element Name.
@@ -58,6 +57,7 @@
 
         $.ajax({
             type: 'GET',
+            headers: {'Cache-Control': 'max-age=10000'},
             url: '/totalHerokuApps',
         }).done(function(response) {
             $('#totalHerokuApps').html(response.length);
@@ -102,43 +102,53 @@
             };
 
             //Creating the Line chart using the data above.
-            var myLineChart = new Chart(lineChart, {
+            $('#progressBarAppsPerMonth').attr('id','hide');
+            new Chart(lineChart, {
                 type: 'line',
                 data: data
             });
-
         });
 
         $.ajax({
             type: 'GET',
+            headers: {'Cache-Control': 'max-age=10000'},
             url: '/totalHerokuAddOns',
         }).done(function(response) {
-            $('#totalHerokuAddOns').html(response.length);
+              $('#totalHerokuAddOns').html(response.length);
 
-            var applicationName = [];
-            var addOnName = [];
+              var applicationName = [];
+              var addOnName = [];
 
-            $.each(response, function() {
-                var tempAddOn = this.name;
-                var strippedAddOn = tempAddOn.split('-')[0];
-                addOnName.push(strippedAddOn);
-                applicationName.push(this.app.name);
+              $.each(response, function() {
+                  var tempAddOn = this.name;
+                  var strippedAddOn = tempAddOn.split('-')[0];
+                  addOnName.push(strippedAddOn);
+                  applicationName.push(this.app.name);
+              });
+
+              $('#progressBarTotalApps').attr('id','hide');
+              var result = order(applicationName);
+              var herokuAppName = result[0];
+              var NoOfAddOns = result[1];
+
+              for(var i = NoOfAddOns.length - 1; i >= 0; i--) {
+                  if(NoOfAddOns[i] === 1) {
+                    NoOfAddOns.splice(i, 1);
+                    herokuAppName.splice(i, 1);
+                  }
+                }
+
+              var chartOne = document.getElementById("addOnsPerApplication");
+              barChartCreator(chartOne, herokuAppName, NoOfAddOns, '# Heorku AddOns', 'Number of AddOns Per Applications');
+
+
+              $('#progressBarTotalAddOns').attr('id','hide');
+              var resultNew = order(addOnName);
+              var herokuAddOnName = resultNew[0];
+              var totalNoOfAddOns = resultNew[1];
+              var chartTwo = document.getElementById("totalOfEachAddOn");
+              barChartCreator(chartTwo, herokuAddOnName, totalNoOfAddOns, '# Amount of Addons ', 'Total amount of each Add On in Heroku');
             });
-
-            //Data for the Chart JS
-            var result = order(applicationName);
-            var herokuAppName = result[0];
-            var NoOfAddOns = result[1];
-            var chartOne = document.getElementById("addOnsPerApplication");
-            barChartCreator(chartOne, herokuAppName, NoOfAddOns, '# Heorku AddOns', 'Number of AddOns Per Applications');
-
-
-            var resultNew = order(addOnName);
-            var herokuAddOnName = resultNew[0];
-            var totalNoOfAddOns = resultNew[1];
-            var chartTwo = document.getElementById("totalOfEachAddOn");
-            barChartCreator(chartTwo, herokuAddOnName, totalNoOfAddOns, '# Amount of Addons ', 'Total amount of each Add On in Heroku');
-        });
 
     }); // end of document ready
 })(jQuery); // end of jQuery name space
