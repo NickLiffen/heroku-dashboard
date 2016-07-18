@@ -22,9 +22,9 @@
                 }
                 prev = arr[i];
             }
-
             return [a, b];
         }
+
         //This function acts as a callback function for creating a bar chart chart. Saves having to write all the code again multiple times.
         function barChartCreator(DOMLocation, labels, data, label, title) {
             var createdChart = new Chart(DOMLocation, {
@@ -34,22 +34,8 @@
                     datasets: [{
                         label: label,
                         data: data,
-                        backgroundColor: [
-                            'rgba(255, 99, 132, 0.2)',
-                            'rgba(54, 162, 235, 0.2)',
-                            'rgba(255, 206, 86, 0.2)',
-                            'rgba(75, 192, 192, 0.2)',
-                            'rgba(153, 102, 255, 0.2)',
-                            'rgba(255, 159, 64, 0.2)'
-                        ],
-                        borderColor: [
-                            'rgba(255,99,132,1)',
-                            'rgba(54, 162, 235, 1)',
-                            'rgba(255, 206, 86, 1)',
-                            'rgba(75, 192, 192, 1)',
-                            'rgba(153, 102, 255, 1)',
-                            'rgba(255, 159, 64, 1)'
-                        ],
+                        backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                        borderColor: 'rgba(255, 255, 255, 1)',
                         borderWidth: 1
                     }]
                 },
@@ -69,13 +55,6 @@
             });
             return createdChart;
         }
-
-        $.ajax({
-            type: 'GET',
-            url: '/forceQuery',
-        }).done(function(response) {
-          console.log(response);
-        });
 
         $.ajax({
             type: 'GET',
@@ -152,6 +131,7 @@
             var NoOfAddOns = result[1];
             var chartOne = document.getElementById("addOnsPerApplication");
             barChartCreator(chartOne, herokuAppName, NoOfAddOns, '# Heorku AddOns', 'Number of AddOns Per Applications');
+
 
             var resultNew = order(addOnName);
             var herokuAddOnName = resultNew[0];

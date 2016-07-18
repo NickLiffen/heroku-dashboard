@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Heroku Dashbard</title>
+    <link rel="stylesheet" type="text/css" href="../css/materialize.css">
+    <link rel="stylesheet" type="text/css" href="../css/dashbaord.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <div class="nav-wrapper blue-grey lighten-1">
+                <a href="/" class="brand-logo" style="padding-left: 30px;">Dashboard</a>
+                <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+                <ul class="right hide-on-med-and-down">
+                    <li><a href="sass.html">Home</a>
+                    </li>
+                    <li><a href="badges.html">CCI Levels</a>
+                    </li>
+                    <li><a href="/addon">Add Ons</a>
+                    </li>
+                    <li><a href="mobile.html">Other</a>
+                    </li>
+                </ul>
+                <ul class="side-nav" id="mobile-demo">
+                    <li><a href="sass.html">Home</a>
+                    </li>
+                    <li><a href="badges.html">CCI Levels</a>
+                    </li>
+                    <li><a href="collapsible.html">Add Ons</a>
+                    </li>
+                    <li><a href="mobile.html">Other</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <div class='container padding-top'>
+        <div class='row'>
+            <nav>
+                <div class="nav-wrapper blue-grey lighten-5">
+                    <div class="col s12">
+                        <a href="/" class="breadcrumb black-text">Home</a>
+                        <a href="/pipeline" class="breadcrumb black-text">Pipeline</a>
+                        <a href="/pipeline/{{pipelineID}}" class="breadcrumb black-text">{{pipelineID}}</a>
+                    </div>
+                </div>
+        </div>
+    </div>
+
+    <div class='container padding-top'>
+        <div class='row'>
+            <div class="col s9">
+                <h3 class='center'>Pipeline Information</h3>
+            </div>
+            <div class="col s3">
+                <i class="material-icons">search</i>
+                <input type="text" id='searchApps' class="form-control" placeholder="Search for Application...">
+                <span class="input-group-btn"></span>
+            </div>
+        </div>
+        <div class='row'>
+            <div id="HerokuApps">
+                <table class="striped centered responsive-table" id='herokuAppTable'>
+                    <thead>
+                      <tr>
+                        <th>Application Name: </th>
+                        <th>Stage:</th>
+                        <th>Last Updated:</th>
+                        <th>More Information</th>
+                      </tr>
+                    </thead>
+                      <tbody>
+                        {{#each pipelineInfo}}
+                          <tr>
+                            <td>{{ this.pipeline.name }}</td>
+                            <td>{{ this.stage }}</td>
+                            <td>{{ this.updated_at }}</td>
+                            <th><a class="waves-effect waves-light btn" id="{{ this.pipeline.name }}"><i class="material-icons left">perm_identity</i>Profile</a></th>
+                          </tr>
+                        {{/each}}
+                      </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.6/Chart.min.js"></script>
+<script src="../node/jquery/dist/jquery.min.js"></script>
+<script src="../js/materialize.min.js"></script>
+<script src="../js/pipeline.js"></script>
+
+</html>
