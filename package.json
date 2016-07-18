@@ -65,10 +65,23 @@
   },
   "devDependencies": {
     "browserify": "^13.0.1",
+    "browserify-shim": "^3.8.12",
     "gulp": "^3.9.1",
     "gulp-browserify": "^0.5.1",
     "gulp-handlebars": "^4.0.0",
     "gulp-sass": "^2.3.2",
     "watchify": "^3.7.0"
+  },
+  "browser": {
+    "jquery": "./node_modules/jquery/dist/jquery.min.js"
+  },
+  "browserify": {
+    "transform": [
+      "browserify-shim"
+    ]
+  },
+  "browserify-shim": {
+    "jquery": "$",
+    "three": "global:THREE"
   }
 }
