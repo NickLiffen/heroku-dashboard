@@ -1,9 +1,8 @@
 'use strict';
-import $ from 'jquery';
 
-module.exports = {
+var totalHerokuApps, totalHerokuAddOns, totalHerokuPipelines;
 
-    totalHerokuApps: function(){
+     totalHerokuApps = function(){
         $.ajax({
             type: 'GET',
             headers: {
@@ -13,9 +12,8 @@ module.exports = {
         }).done(function(response) {
             localStorage.setItem('totalHerokuApps', JSON.stringify(response));
         });
-    },
-
-    totalHerokuAddOns: function(){
+};
+    totalHerokuAddOns = function(){
         $.ajax({
             type: 'GET',
             headers: {
@@ -25,10 +23,10 @@ module.exports = {
         }).done(function(response) {
             localStorage.setItem('totalHerokuAddOns', JSON.stringify(response));
         });
+};
 
-    },
 
-    totalHerokuPipelines: function(){
+    totalHerokuPipelines = function(){
         $.ajax({
             type: 'GET',
             headers: {
@@ -39,5 +37,4 @@ module.exports = {
           localStorage.setItem('totalHerokuPipelines', JSON.stringify(response));
         });
 
-    },
-};
+    };
